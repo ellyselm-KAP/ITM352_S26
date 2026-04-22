@@ -1,0 +1,21 @@
+body {
+    background-color: #ffe6f0;
+}
+
+.quiz-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn-pink {
+    background-color: #ff66b2;
+    color: white;
+    border: none;
+}
+
+.btn-pink:hover {
+    background-color: #ff4da6;
+    color: white;
+}

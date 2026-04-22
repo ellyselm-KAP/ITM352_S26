@@ -1,0 +1,37 @@
+[
+    {
+        "question": "What metal is Captain America's shield primarily made from?",
+        "options": ["Vibranium", "Adamantium", "Titanium", "Uru"],
+        "answer": "Vibranium",
+        "category": "Heroes",
+        "explanation": "Captain America's shield is famous for being made primarily of vibranium."
+    },
+    {
+        "question": "What is the name of Thor's hammer?",
+        "options": ["Mjolnir", "Stormbreaker", "Gungnir", "Necrosword"],
+        "answer": "Mjolnir",
+        "category": "Heroes",
+        "explanation": "Mjolnir is Thor's enchanted hammer, especially known from earlier Marvel stories and films."
+    },
+    {
+        "question": "What organization is Nick Fury most associated with?",
+        "options": ["S.H.I.E.L.D.", "HYDRA", "The Ten Rings", "A.I.M."],
+        "answer": "S.H.I.E.L.D.",
+        "category": "Organizations",
+        "explanation": "Nick Fury is the longtime director and leader figure connected to S.H.I.E.L.D."
+    },
+    {
+        "question": "What is the real name of Black Panther?",
+        "options": ["T'Challa", "M'Baku", "N'Jadaka", "T'Khan"],
+        "answer": "T'Challa",
+        "category": "Heroes",
+        "explanation": "T'Challa is the king of Wakanda and the hero known as Black Panther."
+    },
+    {
+        "question": "Which Infinity Stone is found in the Tesseract?",
+        "options": ["Space Stone", "Mind Stone", "Reality Stone", "Time Stone"],
+        "answer": "Space Stone",
+        "category": "Infinity Stones",
+        "explanation": "The Tesseract contains the Space Stone in the MCU."
+    }
+]

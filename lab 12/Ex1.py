@@ -1,12 +1,21 @@
-#Scrape data from the tenth city of Chicago's Data Portal 
-# Print any line that has a <title> tag in it 
+# Scrape data from the City of Chicago's Data Portal
+# Print any line that has a <title> tag in it
 
-import urlib.request 
-url = "https://data.city of chi
+import ssl
+import urllib.request
 
-print("Opening URL: " + URL)
-web_page = urlib.requesturlopen(url0 
-)
-                                                         
-# Iderate through each line in the web page, searching for the ,title. tag 
+url = "https://data.cityofchicago.org/Historic-Preservation/Landmark-Districts/zidz-sdfj/about_data"
+ssl._create_default_https_context = ssl._create_unverified_context
 
+print("Opening URL:", url)
+web_page = urllib.request.urlopen(url)
+
+# Print the response object
+print("Response object:")
+print(web_page)
+
+# Iterate through each line in the web page, searching for the <title> tag
+for line in web_page:
+    line = line.decode("utf-8")
+    if "<title>" in line:
+        print(line.strip())
