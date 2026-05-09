@@ -525,7 +525,58 @@ def matches():
    return render_template("matches.html", matches=match_results)
 
 
+@app.route("/dashboard")
+def dashboard():
+   if "username" not in session:
+       return redirect("/signin")
 
+   conn = get_db_connection()
+
+   posts_rows = conn.execute(
+       "SELECT username, tags FROM posts WHERE privacy = 'public'"
+   ).fetchall()
+
+   conn.close()
+
+   total_posts = len(posts_rows)
+
+   posts_per_user = {}
+   tag_counts = {}
+
+   for row in posts_rows:
+
+       username = row["username"]
+
+       posts_per_user[username] = posts_per_user.get(username, 0) + 1
+
+       if row["tags"]:
+
+           tags = clean_tags(row["tags"]).split(",")
+
+           for tag in tags:
+
+               if tag:
+
+                   tag_counts[tag] = tag_counts.get(tag, 0) + 1
+
+   top_tags = sorted(
+       tag_counts.items(),
+       key=lambda item: item[1],
+       reverse=True
+   )
+
+   active_users = sorted(
+       posts_per_user.items(),
+       key=lambda item: item[1],
+       reverse=True
+   )
+
+   return render_template(
+       "dashboard.html",
+       total_posts=total_posts,
+       top_tags=top_tags,
+       active_users=active_users
+   )
 
 
 @app.route("/logout")
